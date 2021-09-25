@@ -1,1 +1,46 @@
-<p>customer works!</p>
+<div class="container-fluid">
+  <div class="d-sm-flex justify-content-between align-items-center mb-4">
+    <h3 class="text-dark mb-0">{{ user.userName | titlecase }}'s Dashboard</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row mb-1">
+    <div class="col-10">
+      <div class="form-group">
+        <input type="text" class="form-control" />
+      </div>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-primary">Send</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Respons</h4>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>From</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cell 1</td>
+                  <td>Cell 2</td>
+                </tr>
+                <tr>
+                  <td>Cell 3</td>
+                  <td>Cell 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

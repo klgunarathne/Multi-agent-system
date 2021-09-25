@@ -5,12 +5,12 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-    loadChildren: () => import('./layouts/layout/layout.module').then(m => m.LayoutModule)
+    loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule)
   },
   {
-    path: 'login',
-    loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule)
+    path: 'layout',
+    component: AppComponent,
+    loadChildren: () => import('./layouts/layout/layout.module').then(m => m.LayoutModule)
   }
 ];
 

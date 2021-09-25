@@ -2,19 +2,89 @@
   <div class="login-page">
     <div class="form">
       <h3>Login</h3>
-      <form class="register-form">
-        <input type="text" placeholder="name"/>
-        <input type="password" placeholder="password"/>
-        <input type="text" placeholder="email address"/>
-        <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
-      </form>
-      <form class="login-form">
-        <input type="text" placeholder="username"/>
-        <input type="password" placeholder="password"/>
-        <button>login</button>
-        <p class="message">Not registered? <a href="#">Create an account</a></p>
+      <form class="login-form" [formGroup]="loginFormGropup" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="username" formControlName="username"/>
+        <input type="password" placeholder="password" formControlName="password"/>
+        <button type="submit">login</button>
+        <p class="message">
+          Not registered?
+          <a
+            type="button"
+            class="btn btn-link"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            >Create an account</a
+          >
+        </p>
       </form>
     </div>
   </div>
 </section>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register Form</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col">
+              <div class="group-control">
+                <label for="userName">User Name</label>
+                <input type="text" id="userName" class="form-control" />
+              </div>
+              <div class="group-control">
+                <label for="email">E-mail Address</label>
+                <input type="emal" class="form-control" />
+              </div>
+              <div class="group-control">
+                <label for="telNo">Phone Number</label>
+                <input type="telNo" class="form-control" />
+              </div>
+              <div class="group-control">
+                <label for="userType">User Type</label>
+                <select class="form-select">
+                  <option value=""></option>
+                  <option value="Customer">Customer</option>
+                  <option value="Farmer">Farmer</option>
+                  <option value="Seller">Seller</option>
+                  <option value="Transpoter">Transpoter</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <button
+                class="
+                  btn btn-primary
+                  d-block
+                  btn-user
+                  w-100"
+                type="submit"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+          <hr>
+          <a class="btn btn-danger d-block btn-google btn-user w-100 mb-2" role="button"><i class="fa fa-google"></i>&nbsp; Login with Google</a>
+          <a class="btn btn-primary d-block btn-facebook btn-user w-100" role="button"><i class="fa fa-facebook-f"></i>&nbsp; Login with Facebook</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
